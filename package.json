@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/zearkiatos/legacy-weather-web#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-preset-stage-1": "^6.24.1",
     "lodash": "^4.17.21",
     "react": "^0.14.3",
