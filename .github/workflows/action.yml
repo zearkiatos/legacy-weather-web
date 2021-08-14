@@ -25,7 +25,11 @@ jobs:
       run: |
         touch .env &&
         echo "NODE_ENV=${NODE_ENV}" > .env
+        echo "OPEN_WEATHER_API_KEY=${OPEN_WEATHER_API_KEY}" >> .env
+        echo "OPEN_WEATHER_BASE_URL=${OPEN_WEATHER_BASE_URL}" >> .env
       env:
         NODE_ENV: ${{ secrets.NODE_ENV }}
+        OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+        OPEN_WEATHER_BASE_URL: ${{ secrets.OPEN_WEATHER_BASE_URL }}
     - name: Build docker 🐳
       run: docker build . -t=legacy-weather-web:ghb-$GITHUB_RUN_NUMBER

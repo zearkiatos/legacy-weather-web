@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: legacy-weather-web
+    env_file: 
+      - .env
     volumes: 
       - ".:/app"
     ports:

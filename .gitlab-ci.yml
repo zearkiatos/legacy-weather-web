@@ -53,6 +53,8 @@ build-app:
     - echo "Deploy a review app 🛠"
     - touch .env
     - echo "NODE_ENV=${NODE_ENV}" > .env
+    - echo "OPEN_WEATHER_API_KEY=${OPEN_WEATHER_API_KEY}" >> .env
+    - echo "OPEN_WEATHER_BASE_URL=${OPEN_WEATHER_BASE_URL}" >> .env
   artifacts:
     expire_in: 1hr
     paths:
