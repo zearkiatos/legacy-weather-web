@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { weatherActions } from "../../../actions";
+import { weatherActions } from "../../actions";
 
 class SearchBar extends Component {
   constructor(props) {
