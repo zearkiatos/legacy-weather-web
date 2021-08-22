@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-08-13T18:52:12Z"
+  labels:
+    app: legacy-weather-web
+  name: legacy-weather-web
+  namespace: default
+  resourceVersion: "32431"
+  selfLink: /api/v1/namespaces/default/services/legacy-weather-web
+  uid: 48f8b48a-af98-494e-a60d-d149173e67ae
+spec:
+  clusterIP: 10.111.154.23
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32547
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: legacy-weather-web
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}

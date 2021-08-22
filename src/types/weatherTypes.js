@@ -1,0 +1,5 @@
+const WEATHER_TYPES = {
+    FETCH_WEATHER: 'FETCH_WEATHER'
+}
+
+export default WEATHER_TYPES;
