@@ -6,7 +6,7 @@ import Chart from "../../components/Chart";
 class WeatherList extends Component {
   renderWeather(cityData) {
     const {
-      city: { name },
+      city: { name, country },
       list,
     } = cityData;
     const temperatures = list.map((weather) => (round(weather.main.temp - 273.15)));
@@ -14,7 +14,7 @@ class WeatherList extends Component {
     const humidities = list.map((weather) => weather.main.humidity);
     return (
       <tr key={name}>
-        <td>{name}</td>
+        <td>{name}, {country}</td>
         <td>
           <Chart data={temperatures} unity="ºC" color="orange" />
         </td>
