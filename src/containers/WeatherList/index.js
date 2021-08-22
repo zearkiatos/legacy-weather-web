@@ -2,19 +2,28 @@ import React, { Component } from "react";
 import { round } from "lodash";
 import { connect } from "react-redux";
 import Chart from "../../components/Chart";
+import GoogleMap from "../../components/GoogleMap";
 
 class WeatherList extends Component {
   renderWeather(cityData) {
     const {
-      city: { name, country },
+      city: {
+        name,
+        country,
+        coord: { lon, lat },
+      },
       list,
     } = cityData;
-    const temperatures = list.map((weather) => (round(weather.main.temp - 273.15)));
+    const temperatures = list.map((weather) =>
+      round(weather.main.temp - 273.15)
+    );
     const pressures = list.map((weather) => weather.main.pressure);
     const humidities = list.map((weather) => weather.main.humidity);
     return (
       <tr key={name}>
-        <td>{name}, {country}</td>
+        <td>
+          <GoogleMap lon={lon} lat={lat} />
+        </td>
         <td>
           <Chart data={temperatures} unity="ºC" color="orange" />
         </td>
